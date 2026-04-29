@@ -1,0 +1,9 @@
+Host 192.168.0.102
+    User srv
+    IdentityFile ~/.ssh/id_ed25519_sk
+    IdentityAgent none
+
+Host github.com
+    User git
+    IdentityFile ~/.ssh/id_ed25519_sk
+    IdentityAgent none

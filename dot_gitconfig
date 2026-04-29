@@ -1,0 +1,6 @@
+[user]
+	name = Killian PROVIN
+	email = provin@tuta.com
+	signingkey = F417E4BFB5FBEC4C2EE209D15E8324D7A47DD8E5
+[commit]
+	gpgsign = true

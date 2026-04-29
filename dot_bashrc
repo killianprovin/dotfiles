@@ -1,0 +1,12 @@
+# .bashrc
+
+if [ -f /etc/bashrc ]; then
+    . /etc/bashrc
+fi
+
+if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]; then
+    PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+fi
+export PATH
+
+[ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
