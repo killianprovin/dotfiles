@@ -29,7 +29,7 @@ clean:
     podman system prune -f
 
 reboot:
-    systemctl reboot
+    systemctl reboot -i
 
 rollback:
     sudo bootc rollback
