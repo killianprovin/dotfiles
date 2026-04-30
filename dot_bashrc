@@ -11,3 +11,4 @@ fi
 export PATH
 
 eval "$(starship init bash)"
+eval "$(/var/home/user/.local/bin/mise activate bash)"
