@@ -10,6 +10,5 @@ fi
 
 export PATH
 
-eval "$(starship init bash)"
-
-eval "$(mise activate bash)"
+command -v mise >/dev/null && eval "$(mise activate bash)"
+command -v starship >/dev/null && eval "$(starship init bash)"
