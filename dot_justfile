@@ -1,0 +1,35 @@
+default:
+    @just --list
+
+upgrade: upgrade-os upgrade-flatpak upgrade-firmware upgrade-distrobox upgrade-dotfiles
+    @echo "Done. Reboot if OS was updated."
+
+upgrade-os:
+    sudo bootc upgrade
+
+upgrade-flatpak:
+    flatpak update -y
+
+upgrade-firmware:
+    sudo fwupdmgr refresh --force
+    sudo fwupdmgr update -y || true
+
+upgrade-distrobox:
+    distrobox upgrade --all
+
+upgrade-dotfiles:
+    chezmoi update
+
+status:
+    bootc status
+    flatpak remote-ls --updates || true
+
+clean:
+    flatpak uninstall --unused -y
+    podman system prune -f
+
+reboot:
+    systemctl reboot
+
+rollback:
+    sudo bootc rollback
