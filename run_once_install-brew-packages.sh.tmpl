@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# Brewfile hash: {{ include "Brewfile" | sha256sum }}
+set -euo pipefail
+
+if ! command -v brew >/dev/null 2>&1; then
+    echo "Homebrew not found, skipping Brewfile install"
+    exit 0
+fi
+
+brew bundle --file={{ .chezmoi.sourceDir }}/Brewfile

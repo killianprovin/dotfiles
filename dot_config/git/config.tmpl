@@ -1,0 +1,24 @@
+[user]
+    name = {{ .name }}
+    email = {{ .email }}
+    signingkey = {{ .signingkey }}
+
+[commit]
+    gpgsign = true
+
+[tag]
+    gpgsign = true
+
+[gpg]
+    format = openpgp
+    program = /usr/bin/gpg
+
+[init]
+    defaultBranch = main
+
+[pull]
+    rebase = false
+
+[core]
+    editor = code --wait
+    pager = less -R
